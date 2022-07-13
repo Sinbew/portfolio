@@ -6,20 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <!--Background Circles Start -->
+    <div class="bg-circles">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="circle-3"></div>
+      <div class="circle-4"></div>
+    </div>
+    <!--Background Circles End -->
+
+    <!--Overlay Start-->
+    <div class="overlay"></div>
+    <!--Overlay ENd-->
+
+    <!-- Main Start-->
     <main class="main">
+      <!--Header Start-->
+      <header class="header">
+        <div class="container">
+          <div class="row flex-end">
+            <button class="nav-toggler" type="button">
+              <span></span>
+            </button>
+            <nav class="nav">
+              <div class="nav-inner">
+                <ul>
+                  <li><a class="nav-item link-item" href="#home">Home</a></li>
+                  <li><a class="nav-item link-item" href="#about">About</a></li>
+                  <li><a class="nav-item link-item" href="#portfolio">Portfolio</a></li>
+                  <li><a class="nav-item link-item" href="#contact">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!--Header End-->
+
       <!--Home section Start-->
-      <section class="home-section align-items-center hidden">
+      <section class="home-section align-items-center active" id="home">
         <div class="container">
           <div class="row align-items-center">
             <div class="home-text">
               <p>Hello, I'm</p>
               <h1>Oleksandr Raskulov</h1>
               <h2>Frontend web developer</h2>
-              <a href="#" class="btn">More about me</a>
-              <a href="#" class="btn">Portfolio</a>
+              <a href="#about" class="btn link-item">More about me</a>
+              <a href="#portfolio" class="btn link-item">Portfolio</a>
             </div>
 
             <div class="home-img">
@@ -33,7 +70,7 @@
       <!--Home section End-->
 
       <!--About section Start-->
-      <section class="about-section sec-padding hidden">
+      <section class="about-section sec-padding" id="about">
         <div class="container">
           <div class="row about-row">
             <div class="section-title">
@@ -103,8 +140,8 @@
               </div>
               <!--Expirience End-->
 
-              <a href="#" class="btn">Download CV</a>
-              <a href="#" class="btn">Contact me</a>
+              <a href="./img/profile-photo.jpg" class="btn link-item">Download CV</a>
+              <a href="#contact" class="btn link-item">Contact me</a>
             </div>
           </div>
         </div>
@@ -112,7 +149,7 @@
       <!--About section ENd-->
 
       <!--Portfolio Section Start-->
-      <section class="portfolio-section sec-padding">
+      <section class="portfolio-section sec-padding" id="portfolio">
         <div class="container">
           <div class="row">
             <div class="section-title">
@@ -123,7 +160,7 @@
             <!--Portfolio Item Start-->
             <div class="portfolio-item">
               <div class="portfolio-item-thumbnail">
-                <img src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
+                <img class="portfolio-img" src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
               </div>
               <h3 class="portfolio-item-title">Filmoteka website</h3>
               <button class="btn view-project-btn" type="button">View Project</button>
@@ -137,7 +174,7 @@
                 <div class="general-info">
                   <ul>
                     <li>Created - <span>10 Jul 2022</span></li>
-                    <li>Technologies use - <span>HTML, CSS, Javascript</span></li>
+                    <li>Technologies - <span>HTML, CSS, Javascript</span></li>
                     <li>Role - <span>Scrum Master / Frontend developer</span></li>
                     <li>
                       View Online - <span><a href="#" target="_blank">www.domain.com</a></span>
@@ -150,9 +187,9 @@
             <!--Portfolio Item Start-->
             <div class="portfolio-item">
               <div class="portfolio-item-thumbnail">
-                <img src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
+                <img class="portfolio-img" src="./img/portfolio/helleng.jpg" alt="potfolio-item-thumb" />
               </div>
-              <h3 class="portfolio-item-title">Filmoteka website</h3>
+              <h3 class="portfolio-item-title">Hell english website</h3>
               <button class="btn view-project-btn" type="button">View Project</button>
               <div class="portfolio-item-details">
                 <div class="description">
@@ -163,9 +200,9 @@
                 </div>
                 <div class="general-info">
                   <ul>
-                    <li>Created - <span>10 Jul 2022</span></li>
-                    <li>Technologies use - <span>HTML, CSS, Javascript</span></li>
-                    <li>Role - <span>Scrum Master / Frontend developer</span></li>
+                    <li>Created - <span>20 May 2022</span></li>
+                    <li>Technologies - <span>HTML, CSS, Javascript</span></li>
+                    <li>Role - <span>Team Lead / Frontend developer</span></li>
                     <li>
                       View Online - <span><a href="#" target="_blank">www.domain.com</a></span>
                     </li>
@@ -177,9 +214,9 @@
             <!--Portfolio Item Start-->
             <div class="portfolio-item">
               <div class="portfolio-item-thumbnail">
-                <img src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
+                <img class="portfolio-img" src="./img/portfolio/webstudio.jpg" alt="potfolio-item-thumb" />
               </div>
-              <h3 class="portfolio-item-title">Filmoteka website</h3>
+              <h3 class="portfolio-item-title">Webstudio website</h3>
               <button class="btn view-project-btn" type="button">View Project</button>
               <div class="portfolio-item-details">
                 <div class="description">
@@ -190,9 +227,9 @@
                 </div>
                 <div class="general-info">
                   <ul>
-                    <li>Created - <span>10 Jul 2022</span></li>
-                    <li>Technologies use - <span>HTML, CSS, Javascript</span></li>
-                    <li>Role - <span>Scrum Master / Frontend developer</span></li>
+                    <li>Created - <span>1 May 2022</span></li>
+                    <li>Technologies - <span>HTML, CSS, Javascript</span></li>
+                    <li>Role - <span>Frontend developer</span></li>
                     <li>
                       View Online - <span><a href="#" target="_blank">www.domain.com</a></span>
                     </li>
@@ -204,9 +241,9 @@
             <!--Portfolio Item Start-->
             <div class="portfolio-item">
               <div class="portfolio-item-thumbnail">
-                <img src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
+                <img class="portfolio-img" src="./img/portfolio/britlex.jpg" alt="potfolio-item-thumb" />
               </div>
-              <h3 class="portfolio-item-title">Filmoteka website</h3>
+              <h3 class="portfolio-item-title">Britlex website</h3>
               <button class="btn view-project-btn" type="button">View Project</button>
               <div class="portfolio-item-details">
                 <div class="description">
@@ -217,9 +254,9 @@
                 </div>
                 <div class="general-info">
                   <ul>
-                    <li>Created - <span>10 Jul 2022</span></li>
-                    <li>Technologies use - <span>HTML, CSS, Javascript</span></li>
-                    <li>Role - <span>Scrum Master / Frontend developer</span></li>
+                    <li>Created - <span>25 Apr 2022</span></li>
+                    <li>Technologies - <span>HTML, CSS</span></li>
+                    <li>Role - <span>Frontend developer</span></li>
                     <li>
                       View Online - <span><a href="#" target="_blank">www.domain.com</a></span>
                     </li>
@@ -231,9 +268,9 @@
             <!--Portfolio Item Start-->
             <div class="portfolio-item">
               <div class="portfolio-item-thumbnail">
-                <img src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
+                <img class="portfolio-img" src="./img/portfolio/go-corona.jpg" alt="potfolio-item-thumb" />
               </div>
-              <h3 class="portfolio-item-title">Filmoteka website</h3>
+              <h3 class="portfolio-item-title">Go-Corona website</h3>
               <button class="btn view-project-btn" type="button">View Project</button>
               <div class="portfolio-item-details">
                 <div class="description">
@@ -244,9 +281,9 @@
                 </div>
                 <div class="general-info">
                   <ul>
-                    <li>Created - <span>10 Jul 2022</span></li>
-                    <li>Technologies use - <span>HTML, CSS, Javascript</span></li>
-                    <li>Role - <span>Scrum Master / Frontend developer</span></li>
+                    <li>Created - <span>5 May 2022</span></li>
+                    <li>Technologies - <span>HTML, CSS</span></li>
+                    <li>Role - <span>Frontend developer</span></li>
                     <li>
                       View Online - <span><a href="#" target="_blank">www.domain.com</a></span>
                     </li>
@@ -258,9 +295,9 @@
             <!--Portfolio Item Start-->
             <div class="portfolio-item">
               <div class="portfolio-item-thumbnail">
-                <img src="./img/portfolio/Filmoteka.jpg" alt="potfolio-item-thumb" />
+                <img class="portfolio-img" src="./img/portfolio/bose.jpg" alt="potfolio-item-thumb" />
               </div>
-              <h3 class="portfolio-item-title">Filmoteka website</h3>
+              <h3 class="portfolio-item-title">Headphones landing page</h3>
               <button class="btn view-project-btn" type="button">View Project</button>
               <div class="portfolio-item-details">
                 <div class="description">
@@ -271,9 +308,9 @@
                 </div>
                 <div class="general-info">
                   <ul>
-                    <li>Created - <span>10 Jul 2022</span></li>
-                    <li>Technologies use - <span>HTML, CSS, Javascript</span></li>
-                    <li>Role - <span>Scrum Master / Frontend developer</span></li>
+                    <li>Created - <span>1 Jun 2022</span></li>
+                    <li>Technologies - <span>HTML, CSS, Javascript</span></li>
+                    <li>Role - <span>Frontend developer</span></li>
                     <li>
                       View Online - <span><a href="#" target="_blank">www.domain.com</a></span>
                     </li>
@@ -285,8 +322,79 @@
           </div>
         </div>
       </section>
-      <!--Portfolio Section End-->
+
+      <!--Contact Section Start-->
+      <section class="contact-section sec-padding" id="contact">
+        <div class="container">
+          <div class="row contact-row">
+            <div class="section-title">
+              <h2>Contact Me</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact-form">
+              <form>
+                <div class="row">
+                  <div class="input-group">
+                    <input class="input-control" type="text" placeholder="Name" required />
+                  </div>
+                  <div class="input-group">
+                    <input class="input-control" type="text" placeholder="Email" required />
+                  </div>
+                  <div class="input-group">
+                    <input class="input-control" type="text" placeholder="Subject" required />
+                  </div>
+                  <div class="input-group">
+                    <textarea class="input-control" placeholder="Message"></textarea>
+                  </div>
+                  <div class="submit-btn">
+                    <button class="btn" type="submit">Send message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <h3>Email</h3>
+                <p>alexandr1991r@gmail.com</p>
+              </div>
+              <div class="contact-info-item">
+                <h3>Phone</h3>
+                <p>+38 050 923-53-59</p>
+              </div>
+              <div class="contact-info-item">
+                <h3>Social media</h3>
+                <div class="social-links">
+                  <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Contact Section End-->
     </main>
+    <!-- Main end-->
+
+    <!-- Portfolio Item Details Popup Start-->
+    <div class="portfolio-popup">
+      <div class="pp-inner">
+        <div class="pp-content">
+          <div class="pp-header">
+            <button class="btn pp-close" type="button"><i class="fas fa-times"></i></button>
+            <div class="pp-thumbnail">
+              <img src="./img/portfolio/bose.jpg" alt="pp-thumbnail" />
+            </div>
+            <h3></h3>
+          </div>
+          <div class="pp-body"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Item Details Popup End-->
     <script src="./js/index.js"></script>
   </body>
 </html>
