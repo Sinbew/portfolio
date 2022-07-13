@@ -6,7 +6,8 @@
 :root {
   /* Colors */
 
-  --main-color: #e02f6b;
+  /* --main-color: #e02f6b; */
+  --main-color: #5e7cbd;
   --blue: #0000ff;
   --blue-dark: #18293c;
   --orangre: #ffa500;
@@ -48,7 +49,9 @@ body {
   -webkit-tap-highlight-color: transparent;
 
   color: var(--blue-dark);
-  background: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light));
+  /* background: linear-gradient(to bottom right, var(--pink-light), var(--cyan-light)); */
+  background: linear-gradient(to bottom right, #c2cbdd, #e4e4e4);
+
   background-attachment: fixed;
 
   font-family: "Poppins", sans-serif;
@@ -67,7 +70,7 @@ body::before {
   height: 100%;
   width: 100%;
 
-  background-color: var(--green-yellow);
+  /* background-color: var(--green-yellow); */
   z-index: -1;
   opacity: 0.12;
 }
@@ -294,11 +297,20 @@ button {
 }
 @keyframes scale {
   0% {
-    transform: scale(0);
+    transform: scale(2.4);
   }
 
   100% {
-    transform: scale(2);
+    transform: scale(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /* Background Circles */
@@ -319,8 +331,6 @@ button {
   position: absolute;
 
   border-radius: 50%;
-
-  filter: blur(20px);
 }
 
 .bg-circles .circle-1 {
@@ -335,6 +345,8 @@ button {
   opacity: 0.3;
 
   animation: zoomInOut 8s linear infinite;
+
+  filter: blur(10px);
 }
 
 .bg-circles .circle-2 {
@@ -347,7 +359,8 @@ button {
 
   opacity: 0.4;
 
-  animation: bounceTop 3s ease-in-out infinite;
+  animation: bounceTop 10s ease-in-out infinite;
+  filter: blur(4px);
 }
 
 .bg-circles .circle-3 {
@@ -362,6 +375,7 @@ button {
   opacity: 0.6;
 
   animation: bounceAround 40s linear infinite;
+  filter: blur(10px);
 }
 
 .bg-circles .circle-4 {
@@ -374,6 +388,7 @@ button {
 
   opacity: 0.6;
   animation: scale 10s ease 0s infinite alternate-reverse forwards;
+  filter: blur(15px);
 }
 
 /* Overlay */
@@ -394,6 +409,68 @@ button {
 
 .overlay.active {
   visibility: visible;
+}
+
+/* ------------
+     Page Loader
+------------- */
+
+.page-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--white-alpha-25);
+
+  backdrop-filter: var(--backdrop-filter-blur);
+  z-index: 999;
+
+  transition: opacity 0.6s ease;
+}
+
+.page-loader.fade-out {
+  opacity: 0;
+}
+
+.page-loader div {
+  border: 2px solid transparent;
+
+  position: absolute;
+  border-radius: 50%;
+
+  opacity: 0.6;
+
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+
+  animation: spin 1s linear infinite;
+}
+
+.page-loader div:nth-child(1) {
+  height: 60px;
+  width: 60px;
+
+  border-color: var(--main-color);
+}
+
+.page-loader div:nth-child(2) {
+  height: 45px;
+  width: 45px;
+
+  border-color: var(--blue);
+
+  animation-duration: 1.2s;
+}
+.page-loader div:nth-child(3) {
+  height: 30px;
+  width: 30px;
+
+  border-color: var(--orangre);
 }
 /* ------------
      Header
@@ -615,14 +692,18 @@ Home Section
   border: 8px solid var(--white-alpha-25);
 
   margin: auto;
+  overflow: hidden;
 }
 
 .home-img .img-box img {
   width: 100%;
   border-radius: 50%;
-  filter: contrast(1.1) saturate(90%);
+  transform: scale(1.5);
+  transition: 1s ease;
 }
-
+.home-img .img-box img:hover {
+  /* transform: scale(1 .02); */
+}
 /* ==============
 About Section 
 ===============*/
@@ -967,13 +1048,17 @@ Portfolio Popup
 Contact Section 
 ===============*/
 
+.contact-section .container {
+  padding-top: 100px;
+}
+
 .contact-row {
   margin-bottom: 30px;
 }
 
 .contact-form,
 .contact-info {
-  width: 50%;
+  /* width: 50%; */
   padding: 15px;
 }
 
@@ -1024,7 +1109,9 @@ Contact Section
 }
 
 .contact-info {
-  padding-left: 135px;
+  /* padding-left: 135px; */
+  margin: auto;
+  text-align: center;
 }
 
 .contact-info-item {
@@ -1058,4 +1145,86 @@ Contact Section
 .contact-info-item .social-links a:hover {
   color: var(--white);
   background-color: var(--main-color);
+}
+
+/* Responsie */
+
+@media (max-width: 991px) {
+  .header {
+    left: -20px;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .home-text,
+  .home-img {
+    width: 100%;
+  }
+
+  .home-text {
+    text-align: center;
+  }
+
+  .home-img {
+    order: -1;
+  }
+
+  .home-img .img-box {
+    max-width: 300px;
+  }
+
+  .home-text .btn {
+    margin: 0 7px 15px;
+  }
+
+  .portfolio-item {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    left: -20px;
+  }
+
+  .about-text,
+  .about-img {
+    width: 100%;
+  }
+  .about-text {
+    margin-top: 30px;
+  }
+
+  .portfolio-item {
+    width: calc(100% - 30px);
+    /* text-align: center; */
+  }
+
+  .pp-inner {
+    padding: 30px 15px;
+  }
+
+  .contact-info {
+    order: -1;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-title h2,
+  .header .nav-inner ul li a {
+    font-size: 35px;
+  }
+
+  .home-text h1 {
+    font-size: 30px;
+  }
+  .home-text h2 {
+    font-size: 18px;
+  }
+
+  .pp-header h3 {
+    font-size: 20px;
+  }
 }
