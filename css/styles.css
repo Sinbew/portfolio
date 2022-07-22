@@ -1228,3 +1228,13 @@ Contact Section
     font-size: 20px;
   }
 }
+
+/* FORM STATUS */
+
+.my-form-status {
+  font-size: 20px;
+  font-weight: 500;
+
+  margin-top: 32px;
+  margin-left: 230px;
+}
