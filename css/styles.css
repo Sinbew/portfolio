@@ -698,11 +698,11 @@ Home Section
 .home-img .img-box img {
   width: 100%;
   border-radius: 50%;
-  /* transform: scale(1.5); */
+  transform: scale(1.5);
   transition: 1s ease;
 }
 .home-img .img-box img:hover {
-  /* transform: scale(1 .02); */
+  transform: scale(1.45);
 }
 /* ==============
 About Section 
